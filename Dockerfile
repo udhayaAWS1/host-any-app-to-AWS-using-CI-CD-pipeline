@@ -13,8 +13,6 @@
 # lets build the application
  RUN npm run build
  
- # start an application (starting our react server)
- CMD ["npm", "run", "start"]
 
 FROM nginx
 EXPOSE 80
