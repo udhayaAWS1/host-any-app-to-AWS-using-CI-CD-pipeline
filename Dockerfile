@@ -1,15 +1,8 @@
-# pull the official base image (Background o.s for container)
- FROM node:alpine as builder
+FROM node:alpine as builder
+WORKDIR '/app'
+COPY . .
+RUN npm install
 
-# set working direction (directory for my project)
- WORKDIR /app
-
-# Copy everything from local machine to our server, second dot refers to the directory on the container.
- COPY . .
-
-# install npm dependencies
- RUN npm install
- 
 # lets build the application
  RUN npm run build
  
